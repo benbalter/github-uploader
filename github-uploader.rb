@@ -43,15 +43,15 @@ class GitHubUploader
     end
 
     def client
-      Octokit::Client.new :access_token => user.token
+      @client ||= Octokit::Client.new :access_token => user.token
     end
 
     def repo
-      client.repository "#{params[:user]}/#{params[:repo]}"
+      @repo ||= client.repository "#{params[:user]}/#{params[:repo]}"
     end
 
     def nwo
-      "#{repo.owner.login}/#{repo.name}"
+      @nwo ||= "#{repo.owner.login}/#{repo.name}"
     end
 
     def render_template(template, locals)
