@@ -1,0 +1,7 @@
+<h2>Repositories <small>Pick a repository to upload files to</small></h2>
+
+<ul>
+<% repositories.each do |repo| %>
+  <li><a href="/<%= repo.owner.login %>/<%= repo.name %>"><%= repo.name %></a></li>
+<% end %>
+</ul>

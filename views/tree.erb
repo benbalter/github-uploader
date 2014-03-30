@@ -1,0 +1,30 @@
+<h2><%= repo.owner.login %> / <a href="/<%= repo.owner.login %>/<%= repo.name %>"><%= repo.name %></a></h2>
+
+<p><em>Navigate below to the desired destination folder, drag-and-drop a file to upload</em></p>
+
+<h3>
+  <a href="/<%= repo.owner.login %>/<%= repo.name %>">/</a>
+  <% path.split("/").each do |part| %>
+  <% puts path.inspect; puts part.inspect %>
+    <a href="/<%= repo.owner.login %>/<%= repo.name %>/<%= path.match(/(.*)\/?#{part}/)[0] %>"><%= part %></a> /
+  <% end %>
+</h3>
+
+<% unless msg.nil? %>
+  <div class="alert alert-success"><%= msg %></div>
+<% end %>
+
+<ul id="tree"><% tree.each do |object| %>
+  <% if object.path == path %>
+  <% elsif object.type == "dir" %>
+  <li class="directory"><a href="/<%= nwo %>/<%= object.path %>"><%= object.path.sub(path, "") %></a></li>
+  <% else %>
+  <li class="file"><%= object.path.sub(path, "") %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<form class="form" method="POST" enctype="multipart/form-data" id="form">
+  <input type="file" class="file" name="doc" id="doc" value="FOO">
+  <input type="submit" class="btn btn-primary" value="Upload" id="submit">
+</form>
