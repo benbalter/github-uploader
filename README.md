@@ -4,7 +4,7 @@ A simple app to enable drag-and-drop uploading of binary and other assets to Git
 
 ## Demo
 
-[demo](#)
+[Live Demo](https://github-uploader.herokuapp.com/)
 
 ## Usage
 
