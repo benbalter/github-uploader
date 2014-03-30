@@ -5,7 +5,6 @@
 <h3>
   <a href="/<%= repo.owner.login %>/<%= repo.name %>">/</a>
   <% path.split("/").each do |part| %>
-  <% puts path.inspect; puts part.inspect %>
     <a href="/<%= repo.owner.login %>/<%= repo.name %>/<%= path.match(/(.*)\/?#{part}/)[0] %>"><%= part %></a> /
   <% end %>
 </h3>
