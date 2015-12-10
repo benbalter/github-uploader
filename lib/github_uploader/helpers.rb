@@ -27,7 +27,8 @@ module GitHubUploader
     def file_exists?(path)
       directory = File.dirname path
       filename = File.basename path
-      tree(directory).any? { |object| object.path == filename }
+
+      tree(directory).any? { |object| object.name == filename }
     end
 
     def upload(upload_path, message, file)
