@@ -1,2 +1,2 @@
-require "./github-uploader"
+require "./lib/github_uploader"
 run GitHubUploader::App

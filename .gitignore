@@ -5,7 +5,7 @@
 tmp
 
 #bower bloat
-public/vendor/bootstrap/grunt
-public/vendor/bootstrap/less
-public/vendor/bootstrap/test-infra
-public/vendor/jquery/src
+lib/public/vendor/bootstrap/grunt
+lib/public/vendor/bootstrap/less
+lib/public/vendor/bootstrap/test-infra
+lib/public/vendor/jquery/src
