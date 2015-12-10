@@ -24,14 +24,6 @@ module GitHubUploader
       client.contents nwo, path: path
     end
 
-    def cache_params
-      session[:params] = params.to_json
-    end
-
-    def uncache_params
-      params.merge! JSON.parse(session.delete(:params))
-    end
-
     def file_exists?(path)
       directory = File.dirname path
       filename = File.basename path
@@ -52,7 +44,6 @@ module GitHubUploader
     end
 
     def process_upload
-      uncache_params if session[:params]
       upload "#{path}/#{params['filename']}", "Upload #{params['filename']}", params['path']
     end
   end
