@@ -9,8 +9,10 @@
   <% end %>
 </h3>
 
-<% unless msg.nil? %>
-  <div class="alert alert-success"><%= msg %></div>
+<% unless flash.keys.empty? %>
+  <% flash.keys.each do |type| %>
+    <div class="alert alert-<%= type %>"><%= flash[type] %></div>
+  <% end %>
 <% end %>
 
 <ul id="tree"><% tree.each do |object| %>

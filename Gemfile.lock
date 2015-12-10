@@ -36,6 +36,8 @@ GEM
     rack-coffee (1.0.3)
       coffee-script
       rack
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (1.5.3)
       rack
     rack-ssl-enforcer (0.2.9)
@@ -51,6 +53,8 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    sinatra-redirect-with-flash (0.2.1)
+      sinatra (>= 1.0.0)
     sinatra_auth_github (1.2.0)
       sinatra (~> 1.0)
       warden-github (~> 1.2.0)
@@ -74,9 +78,11 @@ DEPENDENCIES
   octokit
   pry
   rack-coffee
+  rack-flash3
   rack-ssl-enforcer
   rerun
   sinatra
+  sinatra-redirect-with-flash
   sinatra_auth_github
 
 BUNDLED WITH

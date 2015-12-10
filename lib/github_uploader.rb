@@ -6,6 +6,8 @@ require 'json'
 require 'securerandom'
 require 'fileutils'
 require 'rack/coffee'
+require 'rack-flash'
+require 'sinatra/redirect_with_flash'
 require_relative "github_uploader/helpers"
 
 Dotenv.load
@@ -42,6 +44,8 @@ module GitHubUploader
     end
 
     use Rack::Coffee, root: "#{root}/public", urls: '/assets/javascripts'
+    use Rack::Flash
+    helpers Sinatra::RedirectWithFlash
 
     get "/" do
       render_template :index, { :repositories => client.repositories }
@@ -53,29 +57,20 @@ module GitHubUploader
         :nwo  => nwo,
         :path => path,
         :repo => repo,
-        :msg  => nil
+        :flash => flash
       }
     end
 
     post "/:user/:repo/?*" do
       params['path'] = params['doc'][:tempfile].path
       params['filename'] = File.basename params['doc'][:filename]
-      cache_params
-      authenticate!
 
+      url = "#{params[:user]}/#{params[:repo]}/#{path}"
       if process_upload
-        msg = "\"#{params['filename']}\" uploaded successfully"
+        redirect url, success: "\"#{params['filename']}\" uploaded successfully"
       else
-        msg = "FAILED"
+        redirect url, error: "Upload failed"
       end
-
-      render_template :tree, {
-        :tree => tree(path),
-        :nwo  => nwo,
-        :path => path,
-        :repo => repo,
-        :msg  => msg
-      }
     end
   end
 end
