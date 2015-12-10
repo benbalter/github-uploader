@@ -2,6 +2,8 @@
 
 A simple app to enable drag-and-drop uploading of binary and other assets to GitHub Repositories
 
+[![Build Status](https://travis-ci.org/benbalter/github-uploader.svg)](https://travis-ci.org/benbalter/github-uploader)
+
 ## Demo
 
 [Live Demo](https://github-uploader.herokuapp.com/)
