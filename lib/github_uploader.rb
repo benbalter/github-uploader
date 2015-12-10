@@ -53,10 +53,10 @@ module GitHubUploader
 
     get "/:user/:repo/?*" do
       render_template :tree, {
-        :tree => tree(path),
-        :nwo  => nwo,
-        :path => path,
-        :repo => repo,
+        :tree  => tree(path),
+        :nwo   => nwo,
+        :path  => path,
+        :repo  => repo,
         :flash => flash
       }
     end
