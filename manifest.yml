@@ -1,0 +1,3 @@
+---
+name: github-uploader
+buildpack: https://github.com/cloudfoundry/ruby-buildpack
