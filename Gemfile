@@ -10,6 +10,7 @@ gem 'sinatra-redirect-with-flash'
 gem 'rack-flash3'
 gem 'moneta'
 gem 'redis'
+gem 'rake'
 
 group :development do
   gem "pry"
@@ -20,5 +21,4 @@ group :test do
   gem 'rspec'
   gem 'rack-test'
   gem 'webmock'
-  gem 'rake'
 end
