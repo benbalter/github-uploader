@@ -2,6 +2,6 @@
 
 <ul>
 <% repositories.each do |repo| %>
-  <li><a href="/<%= repo.owner.login %>/<%= repo.name %>"><%= repo.name %></a></li>
+  <li><a href="/<%= repo.owner.login %>/<%= repo.name %>"><%= repo.owner.login %>/<%= repo.name %></a></li>
 <% end %>
 </ul>

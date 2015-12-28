@@ -58,7 +58,7 @@ describe GitHubUploader do
       get "/"
       expect(last_response.status).to eql(200)
       expect(last_response.body).to match(/GitHub Uploader/)
-      expected = /<li><a href="\/octocat\/Hello-World">Hello-World<\/a><\/li>/
+      expected = /<li><a href="\/octocat\/Hello-World">octocat\/Hello-World<\/a><\/li>/
       expect(last_response.body).to match(expected)
     end
 
