@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby `cat .ruby-version`.strip
+
 gem "sinatra"
 gem "octokit"
 gem "dotenv"
