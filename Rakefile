@@ -1,4 +1,7 @@
-require 'rspec/core/rake_task'
+begin
+  require 'rspec/core/rake_task'
+rescue LoadError
+end
 
 desc "Run specs"
 RSpec::Core::RakeTask.new do |t|
