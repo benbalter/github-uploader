@@ -1,3 +1,5 @@
+***Note: [this is now supported by GitHub natively](https://help.github.com/articles/adding-a-file-to-a-repository/).***
+
 # GitHub Uploader
 
 A simple app to enable drag-and-drop uploading of binary and other assets to GitHub Repositories
